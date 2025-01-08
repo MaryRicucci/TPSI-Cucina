@@ -1,0 +1,29 @@
+public class Ordine {
+    private String [] NomiPiatti = new String [10] ;
+    private double [] CostoPiatti = new double [10] ;
+    private double Conto ;
+
+
+    public Ordine () {
+        Conto = 0.00 ;
+    }
+    public void AggiungiPiatto (String Nome, double Costo) {
+        for (int i = 0 ; i<4 ; i++) {
+            if (NomiPiatti[i].equals(null)) {
+                NomiPiatti[i]=Nome ;
+                CostoPiatti[i]=Costo ;
+                Conto = Conto+Costo ;
+            }
+        }
+    }
+    public void RiepilogoOrdine () {
+        for (int i = 0 ; i<10; i++) {
+            System.out.print (NomiPiatti[i]+" "+CostoPiatti[i]+"€");
+        }
+    }
+    public String PagaPasto () {
+        System.out.print ("Conto: "+Conto+"€") ;
+        System.out.print ("---------") ;
+        return "Pagato" ;
+    }
+}
